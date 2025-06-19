@@ -1,0 +1,56 @@
+.sidebar {
+  width: 200px;
+  background: #ccc;
+  padding: 1rem 0.5rem; /* Reduce side padding so button can center better */
+  transition: width 0.3s ease;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center children horizontally */
+}
+
+.sidebar.collapsed {
+  width: 50px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;  /* explicitly ensure left alignment */
+  padding-left: 0.5rem;  /* slight indent if you want */
+}
+
+
+nav a:hover {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+}
+
+.logout {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  width: 80%; /* Make logout button a bit narrower for better look */
+  background: #ff4b2b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

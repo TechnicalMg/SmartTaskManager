@@ -1,0 +1,96 @@
+.edit-task-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dim background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.edit-task-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.edit-task-form h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #2575fc;
+}
+
+.edit-task-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-task-form label {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.edit-task-form select,
+.edit-task-form input[type="date"],
+.edit-task-form input[type="number"],
+.edit-task-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.edit-task-form textarea {
+  resize: vertical;
+}
+
+.edit-task-form button {
+  margin-top: 0.8rem;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.edit-task-form button[type="submit"] {
+  background: #2575fc;
+  color: white;
+}
+
+.edit-task-form button[type="submit"]:hover {
+  background: #1a5ed6;
+}
+
+.edit-task-form button[type="button"] {
+  background: #ccc;
+  color: #333;
+}
+
+.edit-task-form button[type="button"]:hover {
+  background: #bbb;
+}

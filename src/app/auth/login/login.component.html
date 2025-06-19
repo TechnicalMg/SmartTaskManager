@@ -1,0 +1,19 @@
+<div class="page-wrapper">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label>
+        Email:
+        <input formControlName="email" type="email" placeholder="Enter your email">
+      </label>
+
+      <label>
+        Password:
+        <input type="password" formControlName="password" placeholder="Enter your password">
+      </label>
+
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <a routerLink="/signup">Don't have an account? Sign up</a>
+  </div>
+</div>

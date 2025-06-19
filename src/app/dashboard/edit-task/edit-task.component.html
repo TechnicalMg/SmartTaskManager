@@ -1,0 +1,38 @@
+<div class="edit-task-overlay">
+  <div class="edit-task-form">
+    <h3>Edit Task #{{ task.id }}</h3>
+    
+    <form (ngSubmit)="onSubmit()">
+      <label>Priority
+        <select [(ngModel)]="task.priority" name="priority" required>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </label>
+
+      <label>Status
+        <select [(ngModel)]="task.status" name="status" required>
+            <option value="to-do">to do</option>
+          <option value="In-Progress">In-Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </label>
+
+      <label>Due Date
+        <input type="date" [(ngModel)]="task.dueDate" name="dueDate" required>
+      </label>
+
+      <label>Remark
+        <textarea [(ngModel)]="task.remark" name="remark"></textarea>
+      </label>
+
+      <label>Percentage
+        <input type="number" [(ngModel)]="task.percentage" name="percentage" min="0" max="100" required> %
+      </label>
+
+      <button type="submit">Update</button>
+      <button type="button" (click)="onCancel()">Cancel</button>
+    </form>
+  </div>
+</div>

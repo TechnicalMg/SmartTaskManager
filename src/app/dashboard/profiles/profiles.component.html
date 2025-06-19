@@ -1,0 +1,46 @@
+<div class="profiles">
+  <h2>Admin - Manage Users</h2>
+
+  <!-- Summary -->
+  <div class="summary-box">
+    <h3>Total Users</h3>
+    <p>{{ users.length }}</p>
+  </div>
+
+  <!-- Users Table -->
+  <div class="users-table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Sr No.</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="users.length === 0">
+          <td colspan="6" style="text-align: center;">No users found</td>
+        </tr>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <span [ngClass]="user.active ? 'active-badge' : 'inactive-badge'">
+              {{ user.active ? 'Active' : 'Inactive' }}
+            </span>
+          </td>
+          <td>
+            <button (click)="toggleUser(user)">
+              {{ user.active ? 'Deactivate' : 'Activate' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

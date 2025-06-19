@@ -1,0 +1,110 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background: #f4f4f4;
+}
+
+.main-content h1 {
+  margin-bottom: 1rem;
+}
+
+.activity-box {
+  background: #ff416c;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+.activity-box h2 {
+  margin: 0;
+}
+
+.activity-box p {
+  font-size: 2rem;
+  margin: 0.5rem 0 0 0;
+  font-weight: bold;
+}
+
+.search-bar {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.search-bar input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+
+.task-table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  text-align: center;       /* center horizontally */
+  vertical-align: middle;   /* center vertically */
+}
+
+
+th {
+  background: #2575fc;
+  color: white;
+}
+
+tr:hover {
+  background: #f0f0f0;
+}
+
+
+button {
+  background: #ff416c;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.3rem;
+}
+
+button:hover {
+  background: #ff4b2b;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  display: inline-block;
+}
+

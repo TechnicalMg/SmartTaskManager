@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.user-info {
+  font-size: 0.9rem;
+}

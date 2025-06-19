@@ -1,0 +1,31 @@
+<div class="page-wrapper">
+  <div class="signup-container">
+    <h2>Signup</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <label>
+        Name:
+        <input formControlName="name" type="text" placeholder="Enter your name">
+      </label>
+
+      <label>
+        Email:
+        <input formControlName="email" type="email" placeholder="Enter your email">
+      </label>
+
+      <label>
+        Password:
+        <input formControlName="password" type="password" placeholder="Enter your password">
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" formControlName="isAdmin">
+        Register as Admin
+      </label>
+
+
+      <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+    </form>
+
+    <a routerLink="/login" class="login-link">Already have an account? Login</a>
+  </div>
+</div>

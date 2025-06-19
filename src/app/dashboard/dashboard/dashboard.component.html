@@ -1,0 +1,92 @@
+<div class="dashboard">
+  <!-- Header -->
+  <app-header></app-header>
+
+  <div class="body">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Where child routes like /dashboard/create will render -->
+      <router-outlet></router-outlet>
+
+      <!-- Show dashboard content only if no child route is active -->
+      <ng-container *ngIf="!childActive">
+        <h1>Welcome to Smart Task Manager</h1>
+
+        <!-- Activity Summary -->
+        <div class="activity-box">
+          <h2>Total Activities</h2>
+          <p>{{ tasks.length }}</p>
+        </div>
+
+        <div class="search-bar" style="margin-bottom: 10px;">
+          <input 
+            type="text" 
+            placeholder="Search by title..." 
+            [(ngModel)]="searchTerm"
+          >
+          <button (click)="onSearchClick()" style="padding: 5px 10px; font-size: 14px;">
+            🔍
+          </button>
+
+        </div>
+
+        <!-- Task Table -->
+        <div class="task-table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Sr No.</th>
+                <th>Title</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Created Date</th>
+                <th>Due Date</th>
+                <th>Percentage</th>
+                <th>Remark</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="tasks.length === 0">
+                <td colspan="8" style="text-align: center;">No tasks available</td>
+              </tr>
+              <tr *ngFor="let task of filteredTasks; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ task.title }}</td>
+                <td>{{ task.priority }}</td>
+                <td>{{ task.status }}</td>
+                <td>{{ task.createdDate }}</td>
+                <td>{{ task.dueDate }}</td>
+                <td>
+                  <div class="badge" [ngStyle]="{'background-color': getBadgeColor(task.percentage)}">
+                   {{ task.percentage }}%
+                  </div>
+
+                </td>
+                <td>{{ task.remark }}</td>
+                <td>
+                  <button (click)="editTask(task)">Edit</button>
+                  <button (click)="deleteTask(task)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Inline Edit Component (show when selectedTask is set) -->
+        <app-edit-task 
+          *ngIf="selectedTask"
+          [task]="selectedTask"
+          (updated)="onTaskUpdated($event)"
+          (cancelled)="onEditCancelled()">
+        </app-edit-task>
+
+      </ng-container>
+
+    </main>
+  </div>
+</div>

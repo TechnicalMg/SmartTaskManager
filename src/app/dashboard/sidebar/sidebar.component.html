@@ -1,0 +1,15 @@
+<div class="sidebar" [class.collapsed]="isCollapsed">
+  <button class="toggle-btn" (click)="toggleSidebar()">
+    {{ isCollapsed ? '⯈' : '⯇' }}
+  </button>
+
+  <nav *ngIf="!isCollapsed">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/dashboard/create">Create Task</a>
+
+    <!-- Show profile link only if admin -->
+    <a *ngIf="isAdmin" routerLink="/dashboard/profiles">Profile</a>
+
+    <button class="logout" (click)="logout()">Logout</button>
+  </nav>
+</div>
